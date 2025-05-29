@@ -1,0 +1,266 @@
+<!-- Navbar (header) de index.html -->
+<header>
+  <nav>
+    <div class="logo">
+      <div class="logo-text">SEIKO</div>
+      <link rel="stylesheet" href="style.css" />
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      />
+      <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet"
+      />
+      <div class="logo-subtitle">JAPANESE WATCHMAKING</div>
+    </div>
+    <button class="menu-toggle" aria-label="Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <ul>
+      <li><a href="index.html#collection">Collection</a></li>
+      <li><a href="index.html#best-sellers">Best Sellers</a></li>
+      <li><a href="index.html#customization">Personnalisation</a></li>
+      <li><a href="index.html#features">Services</a></li>
+    </ul>
+    <div class="nav-icons">
+      <a href="#" class="icon-link"><i class="fas fa-search"></i></a>
+      <a href="#" class="icon-link"><i class="fas fa-user"></i></a>
+      <a href="#" class="icon-link cart-icon">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="cart-count">0</span>
+      </a>
+    </div>
+  </nav>
+  <div class="overlay"></div>
+</header>
+
+<main
+  id="MainContent"
+  class="content-for-layout focus-none"
+  role="main"
+  tabindex="-1"
+>
+  <script>
+    var onMobile =
+      /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+        window.navigator.userAgent
+      );
+    if (onMobile) {
+      const searchParams =
+        window.location.search?.replace("?", "")?.split("&") || [];
+      if (!searchParams.includes("view=mczrmobile"))
+        searchParams.push("view=mczrmobile");
+      window.location = `${window.location.pathname}?${searchParams.join("&")}`;
+    }
+  </script>
+
+  <script id="mczr" type="application/json">
+    {
+      "settings": {
+        "mainUpdateProductTemplates": false,
+        "productTemplate": "templates/product.mczr.liquid",
+        "productSelector": "#mczrLoader",
+        "additionnalCss": "#mczrProductIframe{width:100%;height:80vh;}",
+        "iframeWidth": "100%",
+        "iframeHeight": "800px",
+        "languageOption": "static",
+        "languageSelector": "",
+        "languageSelectorAttribute": ""
+      },
+      "domain": "seikomod.myshopify.com",
+      "template": "product.mczr",
+
+      "product": {
+        "id": 9685167997277,
+        "title": "Seiko Mod Custom",
+        "handle": "untitled-product",
+        "description": null,
+        "published_at": "2025-01-03T13:08:57+01:00",
+        "created_at": "2024-08-15T14:00:42+02:00",
+        "vendor": "Seiko-mods",
+        "type": "",
+        "tags": [],
+        "price": 0,
+        "price_min": 0,
+        "price_max": 29900,
+        "available": true,
+        "price_varies": true,
+        "compare_at_price": null,
+        "compare_at_price_min": 0,
+        "compare_at_price_max": 0,
+        "compare_at_price_varies": false,
+        "variants": [
+          {
+            "id": 52939787436381,
+            "title": "mczr_price_299",
+            "option1": "mczr_price_299",
+            "option2": null,
+            "option3": null,
+            "sku": "",
+            "requires_shipping": true,
+            "taxable": true,
+            "featured_image": null,
+            "available": true,
+            "name": "Seiko Mod Custom - mczr_price_299",
+            "public_title": "mczr_price_299",
+            "options": ["mczr_price_299"],
+            "price": 29900,
+            "weight": 0,
+            "compare_at_price": null,
+            "inventory_management": null,
+            "barcode": null,
+            "requires_selling_plan": false,
+            "selling_plan_allocations": []
+          },
+          {
+            "id": 55588629840221,
+            "title": "mczr_price_0",
+            "option1": "mczr_price_0",
+            "option2": null,
+            "option3": null,
+            "sku": null,
+            "requires_shipping": true,
+            "taxable": true,
+            "featured_image": null,
+            "available": true,
+            "name": "Seiko Mod Custom - mczr_price_0",
+            "public_title": "mczr_price_0",
+            "options": ["mczr_price_0"],
+            "price": 0,
+            "weight": 0,
+            "compare_at_price": null,
+            "inventory_management": null,
+            "barcode": null,
+            "requires_selling_plan": false,
+            "selling_plan_allocations": []
+          }
+        ],
+        "images": [],
+        "featured_image": null,
+        "options": ["Title"],
+        "requires_selling_plan": false,
+        "selling_plan_groups": [],
+        "content": null
+      },
+      "metafields": {
+        "isCustomizable": true,
+        "startingPointId": "66bdedeae752958b75795b52"
+      },
+      "priceAdjustment": {
+        "value": "",
+        "type": ""
+      }
+    }
+  </script>
+
+  <div id="mczrLoader" style="text-align: center; position: relative">
+    <iframe
+      id="mczrProductIframe"
+      style="border: none; margin-top: 100px"
+      src="https://seikomod.gokickflip.com/customize/startingpoint/66bdedeae752958b75795b52?shopid=66acdb5ef66e9dc978a7d4db&amp;lang=fr&amp;country=FR&amp;currency=EUR&amp;rate=1.0&amp;storeProductUrl=https%3A%2F%2Fseiko-mods.fr%2Fproducts%2Funtitled-product%3FdesignId%3D%3CdesignId%3E%26token%3D%3Ctoken%3E"
+      width="100%"
+      height="800px"
+      allow="clipboard-write"
+    ></iframe>
+    <div id="whatsapp-fake-btn">
+      <a
+        href="https://wa.me/33612345678"
+        target="_blank"
+        style="
+          display: inline-block;
+          width: 100%;
+          background: #25d366;
+          color: white;
+          padding: 12px 10px;
+          border-radius: 12px;
+          font-size: 1rem;
+          text-decoration: none;
+          font-weight: 700;
+          text-align: center;
+          box-sizing: border-box;
+        "
+      >
+        <i class="fab fa-whatsapp" style="margin-right: 8px"></i>WhatsApp
+      </a>
+    </div>
+  </div>
+</main>
+
+<!-- Footer de index.html -->
+<footer>
+  <div class="footer-content">
+    <div class="footer-section">
+      <h3>À Propos</h3>
+      <p>
+        Seiko Luxury Watches - L'excellence de l'horlogerie japonaise depuis
+        1881.
+      </p>
+      <div class="social-links">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+      </div>
+    </div>
+    <div class="footer-section">
+      <h3>Liens Rapides</h3>
+      <ul>
+        <li><a href="index.html#collection">Collection</a></li>
+        <li><a href="index.html#personnalisation">Personnalisation</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#">CGV</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h3>Contact</h3>
+      <p><i class="fas fa-envelope"></i> contact@seiko.com</p>
+      <p><i class="fas fa-phone"></i> +33 1 23 45 67 89</p>
+      <p><i class="fas fa-map-marker-alt"></i> Paris, France</p>
+    </div>
+    <div class="footer-section">
+      <h3>Newsletter</h3>
+      <form class="newsletter-form">
+        <input type="email" placeholder="Votre email" />
+        <button type="submit">S'inscrire</button>
+      </form>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2024 Seiko Luxury Watches. Tous droits réservés.</p>
+  </div>
+</footer>
+
+<script>
+  setTimeout(function () {
+    var btn = document.getElementById("whatsapp-fake-btn");
+    if (btn) btn.style.display = "block";
+  }, 3000);
+</script>
+
+<style>
+  #whatsapp-fake-btn {
+    width: 200px;
+    right: 345px;
+    bottom: 23px;
+    position: absolute;
+    z-index: 9999;
+    display: none;
+  }
+  @media (max-width: 600px) {
+    #whatsapp-fake-btn {
+      width: 90vw;
+      min-width: 0;
+      right: 5vw;
+      left: 5vw;
+      bottom: 16px;
+      position: absolute;
+      margin: 0 auto;
+    }
+    #whatsapp-fake-btn a {
+      font-size: 0.95rem !important;
+      padding: 10px 0 !important;
+    }
+  }
+</style>

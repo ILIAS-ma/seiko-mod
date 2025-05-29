@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Seiko - Montres de Luxe</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo">
+          <div class="logo-text">SEIKO</div>
+          <div class="logo-subtitle">JAPANESE WATCHMAKING</div>
+        </div>
+        <button class="menu-toggle" aria-label="Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <ul>
+          <li><a href="#collection">Collection</a></li>
+          <li><a href="#best-sellers">Best Sellers</a></li>
+          <li><a href="#customization">Personnalisation</a></li>
+          <li><a href="#features">Services</a></li>
+        </ul>
+        <div class="nav-icons">
+          <a href="#" class="icon-link"><i class="fas fa-search"></i></a>
+          <a href="#" class="icon-link"><i class="fas fa-user"></i></a>
+          <a href="#" class="icon-link cart-icon">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart-count">0</span>
+          </a>
+        </div>
+      </nav>
+      <div class="overlay"></div>
+    </header>
+
+    <section class="hero" id="accueil">
+      <video
+        autoplay
+        muted
+        loop
+        id="hero-video"
+        playsinline="true"
+        preload="metadata"
+        poster="//myseikomod.fr/cdn/shop/files/preview_images/05ca7d9417d24b27b3ff1ff0aadb4c4d.thumbnail.0000000000_400x.jpg?v=1724767614"
+      >
+        <source
+          src="//myseikomod.fr/cdn/shop/videos/c/vp/05ca7d9417d24b27b3ff1ff0aadb4c4d/05ca7d9417d24b27b3ff1ff0aadb4c4d.HD-1080p-2.5Mbps-33787829.mp4?v=0"
+          type="video/mp4"
+        />
+      </video>
+      <div class="hero-content">
+        <h1>Seiko Mods</h1>
+        <p class="hero-subtitle">
+          Des montres uniques, personnalisées selon vos envies
+        </p>
+        <div class="hero-buttons">
+          <a href="#collection" class="btn primary">Découvrir</a>
+          <a href="#personnalisation" class="btn secondary">Créer la vôtre</a>
+        </div>
+        <div class="hero-features">
+          <div class="feature">
+            <i class="fas fa-gem"></i>
+            <span>Pièces Originales</span>
+          </div>
+          <div class="feature">
+            <i class="fas fa-tools"></i>
+            <span>Assemblé à la main</span>
+          </div>
+          <div class="feature">
+            <i class="fas fa-shield-alt"></i>
+            <span>Garantie 1 an</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Chatbot -->
+    <div class="chatbot-container">
+      <div class="chatbot-button" id="chatbotButton">
+        <i class="fas fa-comments"></i>
+      </div>
+      <div class="chatbot-window" id="chatbotWindow">
+        <div class="chatbot-header">
+          <h3>Assistant Seiko</h3>
+          <button class="close-button" id="closeChatbot">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="chatbot-messages" id="chatbotMessages">
+          <div class="message bot">
+            Bonjour ! Je suis votre assistant Seiko. Comment puis-je vous aider
+            aujourd'hui ?
+          </div>
+        </div>
+        <div class="chatbot-input">
+          <input
+            type="text"
+            id="userInput"
+            placeholder="Écrivez votre message..."
+          />
+          <button id="sendMessage">
+            <i class="fas fa-paper-plane"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <section class="collection" id="collection">
+      <div class="section-header">
+        <h2>Nos Seiko Mods</h2>
+        <p class="section-subtitle">
+          Des montres uniques, créées avec passion et expertise
+        </p>
+      </div>
+      <div class="swiper collection-swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="watch-card">
+              <div class="watch-image">
+                <img
+                  src="//myseikomod.fr/cdn/shop/files/preview_images/05ca7d9417d24b27b3ff1ff0aadb4c4d.thumbnail.0000000000_400x.jpg?v=1724767614"
+                  alt="Seiko Mod Submariner"
+                />
+                <div class="watch-overlay">
+                  <button class="quick-view">Aperçu rapide</button>
+                </div>
+              </div>
+              <div class="watch-info">
+                <h3>Seiko Mod Submariner</h3>
+                <p>Style iconique, performance exceptionnelle</p>
+                <div class="watch-price">
+                  <span class="price">499 €</span>
+                  <button class="add-to-cart">
+                    <i class="fas fa-shopping-cart"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="watch-card">
+              <div class="watch-image">
+                <img
+                  src="//myseikomod.fr/cdn/shop/files/preview_images/05ca7d9417d24b27b3ff1ff0aadb4c4d.thumbnail.0000000000_400x.jpg?v=1724767614"
+                  alt="Seiko Mod GMT"
+                />
+                <div class="watch-overlay">
+                  <button class="quick-view">Aperçu rapide</button>
+                </div>
+              </div>
+              <div class="watch-info">
+                <h3>Seiko Mod GMT</h3>
+                <p>Voyagez avec style</p>
+                <div class="watch-price">
+                  <span class="price">599 €</span>
+                  <button class="add-to-cart">
+                    <i class="fas fa-shopping-cart"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="watch-card">
+              <div class="watch-image">
+                <img
+                  src="//myseikomod.fr/cdn/shop/files/preview_images/05ca7d9417d24b27b3ff1ff0aadb4c4d.thumbnail.0000000000_400x.jpg?v=1724767614"
+                  alt="Seiko Mod Explorer"
+                />
+                <div class="watch-overlay">
+                  <button class="quick-view">Aperçu rapide</button>
+                </div>
+              </div>
+              <div class="watch-info">
+                <h3>Seiko Mod Explorer</h3>
+                <p>Élégance intemporelle</p>
+                <div class="watch-price">
+                  <span class="price">549 €</span>
+                  <button class="add-to-cart">
+                    <i class="fas fa-shopping-cart"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="watch-card">
+              <div class="watch-image">
+                <img
+                  src="//myseikomod.fr/cdn/shop/files/preview_images/05ca7d9417d24b27b3ff1ff0aadb4c4d.thumbnail.0000000000_400x.jpg?v=1724767614"
+                  alt="Seiko Mod Daytona"
+                />
+                <div class="watch-overlay">
+                  <button class="quick-view">Aperçu rapide</button>
+                </div>
+              </div>
+              <div class="watch-info">
+                <h3>Seiko Mod Daytona</h3>
+                <p>Performance chronographe</p>
+                <div class="watch-price">
+                  <span class="price">649 €</span>
+                  <button class="add-to-cart">
+                    <i class="fas fa-shopping-cart"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
+    </section>
+
+    <section class="best-sellers" id="best-sellers">
+      <div class="section-header">
+        <h2>Best-Sellers</h2>
+        <p class="section-subtitle">
+          Nos modèles les plus populaires, livrés en 24h
+        </p>
+      </div>
+      <div class="swiper best-sellers-swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="watch-card">
+              <div class="watch-image">
+                <img
+                  src="//myseikomod.fr/cdn/shop/files/preview_images/05ca7d9417d24b27b3ff1ff0aadb4c4d.thumbnail.0000000000_400x.jpg?v=1724767614"
+                  alt="Seiko Mod Submariner No Date"
+                />
+                <div class="watch-overlay">
+                  <button class="quick-view">Aperçu rapide</button>
+                </div>
+                <div class="delivery-badge">
+                  <i class="fas fa-truck"></i>
+                  <span>24h</span>
+                </div>
+              </div>
+              <div class="watch-info">
+                <h3>Seiko Mod Submariner No Date</h3>
+                <p>Pure élégance</p>
+                <div class="watch-price">
+                  <span class="price">449 €</span>
+                  <button class="add-to-cart">
+                    <i class="fas fa-shopping-cart"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="watch-card">
+              <div class="watch-image">
+                <img
+                  src="//myseikomod.fr/cdn/shop/files/preview_images/05ca7d9417d24b27b3ff1ff0aadb4c4d.thumbnail.0000000000_400x.jpg?v=1724767614"
+                  alt="Seiko Mod Pepsi"
+                />
+                <div class="watch-overlay">
+                  <button class="quick-view">Aperçu rapide</button>
+                </div>
+                <div class="delivery-badge">
+                  <i class="fas fa-truck"></i>
+                  <span>24h</span>
+                </div>
+              </div>
+              <div class="watch-info">
+                <h3>Seiko Mod Pepsi</h3>
+                <p>Style rétro</p>
+                <div class="watch-price">
+                  <span class="price">529 €</span>
+                  <button class="add-to-cart">
+                    <i class="fas fa-shopping-cart"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="watch-card">
+              <div class="watch-image">
+                <img
+                  src="//myseikomod.fr/cdn/shop/files/preview_images/05ca7d9417d24b27b3ff1ff0aadb4c4d.thumbnail.0000000000_400x.jpg?v=1724767614"
+                  alt="Seiko Mod Pepsi"
+                />
+                <div class="watch-overlay">
+                  <button class="quick-view">Aperçu rapide</button>
+                </div>
+                <div class="delivery-badge">
+                  <i class="fas fa-truck"></i>
+                  <span>24h</span>
+                </div>
+              </div>
+              <div class="watch-info">
+                <h3>Seiko Mod Pepsi</h3>
+                <p>Style rétro</p>
+                <div class="watch-price">
+                  <span class="price">529 €</span>
+                  <button class="add-to-cart">
+                    <i class="fas fa-shopping-cart"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="watch-card">
+              <div class="watch-image">
+                <img
+                  src="//myseikomod.fr/cdn/shop/files/preview_images/05ca7d9417d24b27b3ff1ff0aadb4c4d.thumbnail.0000000000_400x.jpg?v=1724767614"
+                  alt="Seiko Mod Hulk"
+                />
+                <div class="watch-overlay">
+                  <button class="quick-view">Aperçu rapide</button>
+                </div>
+                <div class="delivery-badge">
+                  <i class="fas fa-truck"></i>
+                  <span>24h</span>
+                </div>
+              </div>
+              <div class="watch-info">
+                <h3>Seiko Mod Hulk</h3>
+                <p>Vert émeraude</p>
+                <div class="watch-price">
+                  <span class="price">499 €</span>
+                  <button class="add-to-cart">
+                    <i class="fas fa-shopping-cart"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="watch-card">
+              <div class="watch-image">
+                <img
+                  src="//myseikomod.fr/cdn/shop/files/preview_images/05ca7d9417d24b27b3ff1ff0aadb4c4d.thumbnail.0000000000_400x.jpg?v=1724767614"
+                  alt="Seiko Mod Batman"
+                />
+                <div class="watch-overlay">
+                  <button class="quick-view">Aperçu rapide</button>
+                </div>
+                <div class="delivery-badge">
+                  <i class="fas fa-truck"></i>
+                  <span>24h</span>
+                </div>
+              </div>
+              <div class="watch-info">
+                <h3>Seiko Mod Batman</h3>
+                <p>Bleu et noir</p>
+                <div class="watch-price">
+                  <span class="price">529 €</span>
+                  <button class="add-to-cart">
+                    <i class="fas fa-shopping-cart"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
+    </section>
+
+    <section class="custom-personnalisation" id="personnalisation">
+      <div class="custom-personnalisation-container">
+        <div class="custom-personnalisation-image">
+          <!-- Remplace l'image ci-dessous par celle de ton choix -->
+          <div class="custom-image-placeholder">
+            <span class="custom-image-title"
+              >SEIKO-MODS<br />CONFIGURATEUR</span
+            >
+          </div>
+        </div>
+        <div class="custom-personnalisation-content">
+          <h2>PERSONNALISER MA MONTRE</h2>
+          <p>
+            Configurez votre propre Seiko Mod grâce à notre configurateur en
+            ligne et créez une montre unique qui vous ressemble.
+          </p>
+          <a href="#" class="btn primary">PERSONNALISER MA MONTRE</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="feature-grid">
+        <div class="feature-card">
+          <i class="fas fa-truck"></i>
+          <h3>Livraison Express</h3>
+          <p>Recevez votre montre en 24h</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-shield-alt"></i>
+          <h3>Garantie Premium</h3>
+          <p>2 ans de garantie internationale</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-headset"></i>
+          <h3>Support 24/7</h3>
+          <p>Une équipe à votre écoute</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-undo"></i>
+          <h3>Retour Gratuit</h3>
+          <p>30 jours pour changer d'avis</p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>À Propos</h3>
+          <p>
+            Seiko Luxury Watches - L'excellence de l'horlogerie japonaise depuis
+            1881.
+          </p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+        <div class="footer-section">
+          <h3>Liens Rapides</h3>
+          <ul>
+            <li><a href="#collection">Collection</a></li>
+            <li><a href="#personnalisation">Personnalisation</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#">CGV</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Contact</h3>
+          <p><i class="fas fa-envelope"></i> contact@seiko.com</p>
+          <p><i class="fas fa-phone"></i> +33 1 23 45 67 89</p>
+          <p><i class="fas fa-map-marker-alt"></i> Paris, France</p>
+        </div>
+        <div class="footer-section">
+          <h3>Newsletter</h3>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Votre email" />
+            <button type="submit">S'inscrire</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Seiko Luxury Watches. Tous droits réservés.</p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

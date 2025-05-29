@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Détail Montre - Seiko Mods</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <style>
+      .detail-container {
+        max-width: 1000px;
+        margin: 7rem auto 3rem auto;
+        background: #fff;
+        border-radius: 18px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+        display: flex;
+        gap: 2.5rem;
+        padding: 2.5rem;
+        align-items: flex-start;
+      }
+      .detail-image {
+        flex: 1;
+        text-align: center;
+      }
+      .detail-image img {
+        max-width: 320px;
+        width: 100%;
+        border-radius: 14px;
+        box-shadow: 0 4px 18px rgba(0, 0, 0, 0.1);
+        margin-bottom: 1.2rem;
+      }
+      .detail-thumbs {
+        display: flex;
+        gap: 0.7rem;
+        justify-content: center;
+        margin-bottom: 1.2rem;
+      }
+      .detail-thumbs img {
+        width: 60px;
+        height: 60px;
+        object-fit: cover;
+        border-radius: 8px;
+        cursor: pointer;
+        border: 2px solid transparent;
+        transition: border 0.2s;
+      }
+      .detail-thumbs img.active,
+      .detail-thumbs img:hover {
+        border: 2px solid #000;
+      }
+      .detail-info {
+        flex: 1.5;
+      }
+      .detail-info h1 {
+        font-family: "Playfair Display", serif;
+        font-size: 2.2rem;
+        margin-bottom: 1rem;
+        color: #000;
+      }
+      .detail-info p {
+        color: #555;
+        font-size: 1.1rem;
+        margin-bottom: 1.2rem;
+      }
+      .detail-price {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #000;
+        margin-bottom: 1.5rem;
+      }
+      .detail-specs {
+        margin-bottom: 2rem;
+      }
+      .detail-specs h3 {
+        font-size: 1.1rem;
+        margin-bottom: 0.7rem;
+        color: #000;
+        font-weight: 600;
+      }
+      .spec-list {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 0.5rem 0;
+      }
+      .spec-list li {
+        margin-bottom: 0.4rem;
+        color: #333;
+        font-size: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      .spec-list i {
+        color: #000;
+        font-size: 1rem;
+      }
+      .whatsapp-btn {
+        display: inline-flex;
+        align-items: center;
+        background: #25d366;
+        color: #fff;
+        border: none;
+        border-radius: 30px;
+        padding: 1rem 2.2rem;
+        font-size: 1.1rem;
+        font-weight: 600;
+        cursor: pointer;
+        text-decoration: none;
+        transition: background 0.3s;
+        box-shadow: 0 2px 8px rgba(37, 211, 102, 0.1);
+        gap: 0.8rem;
+        margin-bottom: 2rem;
+      }
+      .whatsapp-btn:hover {
+        background: #1ebe5d;
+      }
+      .detail-guarantee {
+        background: #f8f8f8;
+        border-radius: 12px;
+        padding: 1.2rem 1.5rem;
+        margin-bottom: 1.5rem;
+        font-size: 1rem;
+        color: #333;
+        display: flex;
+        align-items: center;
+        gap: 1.2rem;
+      }
+      .detail-guarantee i {
+        color: #000;
+        font-size: 1.5rem;
+      }
+      .back-link {
+        display: inline-block;
+        margin-bottom: 1.5rem;
+        color: #000;
+        text-decoration: none;
+        font-size: 1rem;
+        font-weight: 500;
+        transition: color 0.2s;
+      }
+      .back-link:hover {
+        color: #25d366;
+        text-decoration: underline;
+      }
+      @media (max-width: 900px) {
+        .detail-container {
+          flex-direction: column;
+          padding: 1.5rem;
+          gap: 1.5rem;
+        }
+        .detail-image img {
+          max-width: 220px;
+        }
+      }
+      header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        background: rgba(255, 255, 255, 0.98);
+        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+        backdrop-filter: blur(10px);
+      }
+      nav {
+        max-width: 1400px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 2rem;
+        height: 70px;
+      }
+      .logo {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .logo-text {
+        font-family: "Playfair Display", serif;
+        font-size: 2rem;
+        font-weight: 700;
+        letter-spacing: 2px;
+        color: #000;
+      }
+      .logo-subtitle {
+        font-size: 0.8rem;
+        letter-spacing: 3px;
+        color: #666;
+      }
+      nav ul {
+        display: flex;
+        list-style: none;
+        gap: 2.5rem;
+      }
+      nav a {
+        color: #333;
+        text-decoration: none;
+        font-size: 1rem;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        position: relative;
+      }
+      nav a::after {
+        content: "";
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: #000;
+        transition: width 0.3s ease;
+      }
+      nav a:hover::after {
+        width: 100%;
+      }
+      @media (max-width: 900px) {
+        nav {
+          flex-direction: column;
+          gap: 1rem;
+          height: auto;
+          padding: 0.5rem 1rem;
+        }
+        nav ul {
+          flex-direction: column;
+          text-align: center;
+          gap: 1rem;
+        }
+        .logo-text {
+          font-size: 1.5rem;
+        }
+      }
+      main {
+        margin-top: 90px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo">
+          <span class="logo-text">SEIKO</span>
+          <span class="logo-subtitle">LUXURY WATCHES</span>
+        </div>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="montres.html">Nos Montres</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <div class="detail-container" id="detailContainer">
+        <!-- Le contenu dynamique s'affichera ici -->
+      </div>
+    </main>
+    <script>
+      // Données des montres (à synchroniser avec montres.html)
+      const watches = [
+        {
+          id: 1,
+          name: "Seiko Mod Submariner",
+          desc: "Style iconique, performance exceptionnelle.",
+          price: "499 €",
+          img: "//myseikomod.fr/cdn/shop/files/preview_images/05ca7d9417d24b27b3ff1ff0aadb4c4d.thumbnail.0000000000_400x.jpg?v=1724767614",
+          images: [
+            "//myseikomod.fr/cdn/shop/files/preview_images/05ca7d9417d24b27b3ff1ff0aadb4c4d.thumbnail.0000000000_400x.jpg?v=1724767614",
+            "//myseikomod.fr/cdn/shop/files/preview_images/05ca7d9417d24b27b3ff1ff0aadb4c4d.thumbnail.0000000001_400x.jpg?v=1724767614",
+          ],
+          specs: [
+            {
+              icon: "fa-clock",
+              label: "Mouvement",
+              value: "Seiko NH35 automatique",
+            },
+            { icon: "fa-gem", label: "Verre", value: "Saphir anti-rayures" },
+            { icon: "fa-tint", label: "Étanchéité", value: "200m" },
+            { icon: "fa-link", label: "Bracelet", value: "Acier inoxydable" },
+          ],
+        },
+        {
+          id: 2,
+          name: "Seiko Mod GMT",
+          desc: "Voyagez avec style.",
+          price: "599 €",
+          img: "//myseikomod.fr/cdn/shop/files/preview_images/05ca7d9417d24b27b3ff1ff0aadb4c4d.thumbnail.0000000000_400x.jpg?v=1724767614",
+          images: [
+            "//myseikomod.fr/cdn/shop/files/preview_images/05ca7d9417d24b27b3ff1ff0aadb4c4d.thumbnail.0000000000_400x.jpg?v=1724767614",
+          ],
+          specs: [
+            { icon: "fa-clock", label: "Mouvement", value: "Seiko NH34 GMT" },
+            { icon: "fa-gem", label: "Verre", value: "Saphir bombé" },
+            { icon: "fa-tint", label: "Étanchéité", value: "100m" },
+            { icon: "fa-link", label: "Bracelet", value: "Cuir premium" },
+          ],
+        },
+        {
+          id: 3,
+          name: "Seiko Mod Explorer",
+          desc: "Élégance intemporelle.",
+          price: "549 €",
+          img: "//myseikomod.fr/cdn/shop/files/preview_images/05ca7d9417d24b27b3ff1ff0aadb4c4d.thumbnail.0000000000_400x.jpg?v=1724767614",
+        },
+        {
+          id: 4,
+          name: "Seiko Mod Daytona",
+          desc: "Performance chronographe.",
+          price: "649 €",
+          img: "//myseikomod.fr/cdn/shop/files/preview_images/05ca7d9417d24b27b3ff1ff0aadb4c4d.thumbnail.0000000000_400x.jpg?v=1724767614",
+        },
+        {
+          id: 5,
+          name: "Seiko Mod Hulk",
+          desc: "Vert émeraude, audace et distinction.",
+          price: "499 €",
+          img: "//myseikomod.fr/cdn/shop/files/preview_images/05ca7d9417d24b27b3ff1ff0aadb4c4d.thumbnail.0000000000_400x.jpg?v=1724767614",
+        },
+        {
+          id: 6,
+          name: "Seiko Mod Batman",
+          desc: "Bleu et noir, look urbain.",
+          price: "529 €",
+          img: "//myseikomod.fr/cdn/shop/files/preview_images/05ca7d9417d24b27b3ff1ff0aadb4c4d.thumbnail.0000000000_400x.jpg?v=1724767614",
+        },
+        {
+          id: 7,
+          name: "Seiko Mod Pepsi",
+          desc: "Style rétro, lunette bicolore.",
+          price: "529 €",
+          img: "//myseikomod.fr/cdn/shop/files/preview_images/05ca7d9417d24b27b3ff1ff0aadb4c4d.thumbnail.0000000000_400x.jpg?v=1724767614",
+        },
+        {
+          id: 8,
+          name: "Seiko Mod Root Beer",
+          desc: "Élégance marron et or.",
+          price: "579 €",
+          img: "//myseikomod.fr/cdn/shop/files/preview_images/05ca7d9417d24b27b3ff1ff0aadb4c4d.thumbnail.0000000000_400x.jpg?v=1724767614",
+        },
+      ];
+      // Récupérer l'ID dans l'URL
+      const params = new URLSearchParams(window.location.search);
+      const id = parseInt(params.get("id"));
+      const watch = watches.find((w) => w.id === id);
+      const container = document.getElementById("detailContainer");
+      if (watch) {
+        let thumbs = "";
+        if (watch.images && watch.images.length > 1) {
+          thumbs =
+            `<div class="detail-thumbs">` +
+            watch.images
+              .map(
+                (img, i) =>
+                  `<img src="${img}" class="${
+                    i === 0 ? "active" : ""
+                  }" onclick="document.querySelector('.detail-image img').src='${img}';document.querySelectorAll('.detail-thumbs img').forEach(e=>e.classList.remove('active'));this.classList.add('active');" />`
+              )
+              .join("") +
+            `</div>`;
+        }
+        let specs = "";
+        if (watch.specs && watch.specs.length) {
+          specs =
+            `<div class="detail-specs"><h3>Caractéristiques techniques</h3><ul class="spec-list">` +
+            watch.specs
+              .map(
+                (s) =>
+                  `<li><i class="fas ${s.icon}"></i> <strong>${s.label} :</strong> ${s.value}</li>`
+              )
+              .join("") +
+            `</ul></div>`;
+        }
+        container.innerHTML = `
+        <div class="detail-image">
+          <img src="${watch.img}" alt="${watch.name}" />
+          ${thumbs}
+        </div>
+        <div class="detail-info">
+          <a href="montres.html" class="back-link"><i class="fas fa-arrow-left"></i> Retour à la liste</a>
+          <h1>${watch.name}</h1>
+          <p>${watch.desc}</p>
+          <div class="detail-price">${watch.price}</div>
+          ${specs}
+          <a class="whatsapp-btn" target="_blank" href="https://wa.me/33612345678?text=Bonjour%2C%20je%20souhaite%20commander%20la%20${encodeURIComponent(
+            watch.name
+          )}%20au%20prix%20de%20${encodeURIComponent(
+          watch.price
+        )}.%20Merci%20!">
+            <i class="fab fa-whatsapp"></i> Acheter sur WhatsApp
+          </a>
+          <div class="detail-guarantee"><i class="fas fa-shield-alt"></i> Garantie 2 ans &bull; Livraison express 24h &bull; Retour gratuit 30j</div>
+        </div>
+      `;
+      } else {
+        container.innerHTML = `<div style='text-align:center;width:100%'><h2>Montre introuvable</h2><p>La montre demandée n'existe pas.</p></div>`;
+      }
+    </script>
+  </body>
+</html>

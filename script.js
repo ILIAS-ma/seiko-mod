@@ -200,10 +200,13 @@ const generateBotResponse = (userMessage) => {
     const responses = {
         'bonjour': 'Bonjour ! Comment puis-je vous aider aujourd\'hui ?',
         'prix': 'Nos montres sont disponibles à partir de 399€. Voulez-vous voir notre collection ?',
-        'livraison': 'Nous proposons une livraison express en 24h pour toute commande en France.',
-        'garantie': 'Toutes nos montres sont garanties 2 ans.',
+        'livraison': 'La livraison est assurée en 24h en Île-de-France et sous 72h dans toute la France.',
+        'garantie': 'Nos montres sont garanties 1 an sur la partie mécanique.',
         'personnalisation': 'Vous pouvez personnaliser votre montre en choisissant le cadran, le bracelet et en ajoutant une gravure.',
-        'contact': 'Vous pouvez nous contacter par email à contact@seiko.com ou par téléphone au +33 1 23 45 67 89.',
+        'contact': 'Vous pouvez nous contacter par email à contact@seiko.com ou par téléphone au +33 1 23 45 67 89. Vous pouvez aussi discuter avec nous sur WhatsApp : https://wa.me/33612345678',
+        'seikool10': 'Utilisez le code promo SEIKOOL10 pour bénéficier de 10% de réduction sur votre commande !',
+        'promo': 'Utilisez le code promo SEIKOOL10 pour bénéficier de 10% de réduction sur votre commande !',
+        'whatsapp': 'Contactez-nous directement sur WhatsApp : https://wa.me/33612345678',
     };
 
     const defaultResponse = 'Je suis désolé, je ne comprends pas votre question. Pouvez-vous la reformuler ?';
@@ -342,4 +345,41 @@ window.addEventListener('resize', () => {
     if (window.innerWidth > 768 && navMenu.classList.contains('active')) {
         toggleMenu();
     }
-}); 
+});
+
+// FAQ Accordion
+const faqQuestions = document.querySelectorAll('.faq-question');
+faqQuestions.forEach((btn) => {
+  btn.addEventListener('click', function() {
+    const item = this.parentElement;
+    const isActive = item.classList.contains('active');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+    if (!isActive) item.classList.add('active');
+  });
+});
+
+// Ajout des boutons promo et WhatsApp dans le chatbot
+function addChatbotButtons() {
+  const btns = document.createElement('div');
+  btns.className = 'chatbot-extra-btns';
+  btns.innerHTML = `
+    <button class="chatbot-btn-promo"><span style='font-size:1.1em;'>🎁</span> Code promo</button>
+    <button class="chatbot-btn-whatsapp"><span style='font-size:1.1em;'>💬</span> WhatsApp</button>
+  `;
+  const chatbotInput = document.querySelector('.chatbot-input');
+  if (chatbotInput && !document.querySelector('.chatbot-extra-btns')) {
+    chatbotInput.parentNode.insertBefore(btns, chatbotInput);
+  }
+  // Action bouton promo
+  btns.querySelector('.chatbot-btn-promo').onclick = function() {
+    addMessage('Utilisez le code promo SEIKOOL10 pour bénéficier de 10% de réduction sur votre commande !', 'bot');
+  };
+  // Action bouton WhatsApp
+  btns.querySelector('.chatbot-btn-whatsapp').onclick = function() {
+    window.open('https://wa.me/33612345678', '_blank');
+  };
+}
+// Afficher les boutons à l'ouverture du chatbot
+if (document.getElementById('chatbotWindow')) {
+  addChatbotButtons();
+} 

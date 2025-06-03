@@ -29,7 +29,7 @@
         <ul>
           <li><a href="index.html#collection">Collection</a></li>
           <li><a href="index.html#best-sellers">Best Sellers</a></li>
-          <li><a href="index.html#customization">Personnalisation</a></li>
+          <li><a href="pero.html">Personnalisation</a></li>
           <li><a href="index.html#features">Services</a></li>
         </ul>
         <div class="nav-icons"></div>
@@ -46,27 +46,118 @@
           height="800px"
           allow="clipboard-write"
         ></iframe>
-        <div id="whatsapp-fake-btn">
-          <a
-            href="https://wa.me/33612345678"
-            target="_blank"
-            style="
-              display: inline-block;
-              width: 100%;
-              background: #25d366;
-              color: white;
-              padding: 12px 10px;
-              border-radius: 12px;
-              font-size: 1rem;
-              text-decoration: none;
-              font-weight: 700;
-              text-align: center;
-              box-sizing: border-box;
-            "
+
+        <!-- Accroche WhatsApp mobile améliorée -->
+        <div id="whatsapp-cta-block">
+          <div id="whatsapp-cta-text">
+            <span class="cta-emoji">💬</span>
+            <span class="cta-main">Intéressé(e) ?</span><br />
+            <span class="cta-desc"
+              >Discutons de votre projet sur <b>WhatsApp</b> et obtenez un
+              conseil personnalisé !</span
+            >
+          </div>
+          <button
+            id="whatsapp-redirect-btn"
+            onclick="window.open('https://wa.me/33612345678','_blank')"
           >
-            <i class="fab fa-whatsapp" style="margin-right: 8px"></i>WhatsApp
-          </a>
+            <i class="fab fa-whatsapp"></i> <span>Discuter sur WhatsApp</span>
+          </button>
         </div>
+
+        <style>
+          #whatsapp-cta-block {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0 auto;
+            max-width: 98vw;
+          }
+          #whatsapp-cta-text {
+            display: none;
+            text-align: center;
+            color: #222;
+            font-size: 1.08rem;
+            font-weight: 500;
+            margin: 18px auto 0 auto;
+            max-width: 95vw;
+            line-height: 1.5;
+            letter-spacing: 0.01em;
+          }
+          #whatsapp-cta-text .cta-emoji {
+            font-size: 1.5rem;
+            display: block;
+            margin-bottom: 2px;
+          }
+          #whatsapp-cta-text .cta-main {
+            font-size: 1.13rem;
+            font-weight: 700;
+            color: #1ebe5d;
+          }
+          #whatsapp-cta-text .cta-desc {
+            font-size: 1.01rem;
+            color: #222;
+            font-weight: 400;
+          }
+          #whatsapp-redirect-btn {
+            position: absolute;
+            right: 340px;
+            left: auto;
+            transform: none;
+            bottom: 20px;
+            width: 200px;
+            max-width: 90vw;
+            background: #25d366;
+            color: #fff;
+            font-size: 1.1rem;
+            font-weight: 700;
+            border: none;
+            border-radius: 12px;
+            padding: 13px 0;
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+            cursor: pointer;
+            transition: background 0.18s, transform 0.18s, box-shadow 0.18s;
+            margin-bottom: 18px;
+          }
+          #whatsapp-redirect-btn i {
+            font-size: 1.3rem;
+          }
+          #whatsapp-redirect-btn:hover {
+            background: #1ebe5d;
+            transform: translateY(-2px) scale(1.04);
+            box-shadow: 0 8px 24px rgba(37, 211, 102, 0.18);
+          }
+          @media (max-width: 600px) {
+            #whatsapp-cta-text {
+              display: block;
+              font-size: 1.01rem;
+              margin: 18px auto 0 auto;
+              color: #222;
+              font-weight: 500;
+            }
+            #whatsapp-redirect-btn {
+              position: static;
+              display: block;
+              margin: 12px auto 0 auto;
+              width: 90vw;
+              font-size: 1.05rem;
+              padding: 11px 0;
+              border-radius: 16px;
+              box-shadow: 0 4px 18px rgba(37, 211, 102, 0.18);
+              z-index: 1;
+              transition: background 0.18s, transform 0.18s, box-shadow 0.18s;
+              margin-bottom: 18px;
+            }
+            #whatsapp-redirect-btn span {
+              font-size: 1.01rem;
+            }
+          }
+        </style>
       </div>
     </main>
     <footer>
@@ -87,7 +178,7 @@
           <h3>Liens Rapides</h3>
           <ul>
             <li><a href="index.html#collection">Collection</a></li>
-            <li><a href="index.html#personnalisation">Personnalisation</a></li>
+            <li><a href="pero.html">Personnalisation</a></li>
             <li><a href="#contact">Contact</a></li>
             <li><a href="#">CGV</a></li>
           </ul>

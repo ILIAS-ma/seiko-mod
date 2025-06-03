@@ -231,6 +231,8 @@ const quickViewButtons = document.querySelectorAll('.quick-view');
 quickViewButtons.forEach(button => {
     button.addEventListener('click', (e) => {
         e.preventDefault();
+        // Supprimer toute modale quick-view déjà présente
+        document.querySelectorAll('.quick-view-modal').forEach(m => m.remove());
         const watchCard = button.closest('.watch-card');
         const watchName = watchCard.querySelector('h3').textContent;
         const watchPrice = watchCard.querySelector('.price').textContent;

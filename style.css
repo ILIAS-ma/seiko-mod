@@ -38,6 +38,8 @@ nav {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    justify-content: flex-start;
+    margin-right: 0;
 }
 
 .logo-text {
@@ -55,12 +57,15 @@ nav {
 }
 
 .menu-toggle {
+    margin-left: 0;
     display: none;
     background: none;
     border: none;
     cursor: pointer;
     padding: 0.5rem;
     z-index: 1001;
+    position: absolute;
+    right: 20px;
 }
 
 .menu-toggle span {
@@ -247,14 +252,26 @@ nav a:hover::after {
 .btn.primary {
     background: #fff;
     color: #000;
+    border: none;
+    font-size: 1.2rem;
+    font-weight: 700;
+    padding: 1.2rem 2.8rem;
+    border-radius: 30px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.18), 0 1.5px 8px rgba(247,200,115,0.10);
+    transition: background 0.3s, color 0.3s, transform 0.2s, box-shadow 0.3s;
+    margin-top: 0.5rem;
+    letter-spacing: 2px;
+    outline: none;
+    position: relative;
+    overflow: hidden;
 }
 
-.btn.primary::before {
-    background: #000;
-}
-
-.btn.primary:hover {
-    color: #fff;
+.btn.primary:hover, .btn.primary:focus {
+    background: #fff;
+    color: #222;
+    transform: translateY(-3px) scale(1.04);
+    box-shadow: 0 16px 40px rgba(247,200,115,0.22), 0 2px 12px rgba(0,0,0,0.12);
+    border: 2px solid #f7c873;
 }
 
 .btn.secondary {
@@ -580,11 +597,13 @@ section {
 }
 
 .customization-image img {
-    max-width: 350px;
+    max-width: 500px;
     width: 100%;
-    border-radius: 18px;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.10);
-    transition: transform 0.3s cubic-bezier(0.175,0.885,0.32,1.275);
+    height: auto;
+    display: block;
+    margin: 0 auto 1.2rem auto;
+    border-radius: 14px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.1);
 }
 
 .customization-image img:hover {
@@ -812,7 +831,7 @@ footer {
     }
 
     nav {
-        padding: 0.5rem 1rem;
+        padding: 0 1rem;
     }
 
     nav ul {
@@ -1575,19 +1594,22 @@ footer {
 }
 @media (max-width: 600px) {
     .custom-personnalisation-container {
-        flex-direction: column;
-        padding: 1rem 0;
-        gap: 1rem;
+        min-height: unset;
+        align-items: flex-start;
+        gap: 0;
     }
-    .custom-image-placeholder {
-        min-height: 80px;
-        max-width: 180px;
+    .custom-personnalisation-image img {
+        margin-bottom: 0;
+        max-height: 150px;
     }
     .custom-image-title {
         font-size: 0.8rem;
         left: 50%;
         bottom: 5px;
         transform: translateX(-50%);
+    }
+    .custom-personnalisation-content {
+        margin-top: -100px;
     }
     .custom-personnalisation-content h2 {
         font-size: 1.1rem;
@@ -1868,6 +1890,32 @@ footer {
     }
     .chatbot-extra-btns {
         gap: 0.3rem;
+    }
+}
+
+.detail-image {
+    text-align: center;
+}
+@media (max-width: 600px) {
+    .detail-image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    .detail-image img {
+        max-width: 98vw;
+        width: 98vw;
+        margin: 0 auto 1.2rem auto;
+        display: block;
+    }
+    .whatsapp-btn {
+        display: flex !important;
+        justify-content: center;
+        align-items: center;
+        margin-left: auto;
+        margin-right: auto;
+        width: fit-content;
     }
 }
 

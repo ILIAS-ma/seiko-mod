@@ -6,6 +6,14 @@
     <title>Nos Montres - Seiko Mods</title>
     <link rel="stylesheet" href="style.css" />
     <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap"
       rel="stylesheet"
     />
@@ -113,5 +121,30 @@
         </div>
       </div>
     </section>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const menuToggle = document.querySelector(".menu-toggle");
+        const navMenu = document.querySelector("nav ul");
+        const overlay = document.querySelector(".overlay");
+        function toggleMenu() {
+          menuToggle.classList.toggle("active");
+          navMenu.classList.toggle("active");
+          overlay.classList.toggle("active");
+          document.body.style.overflow = navMenu.classList.contains("active")
+            ? "hidden"
+            : "";
+        }
+        menuToggle.addEventListener("click", toggleMenu);
+        overlay.addEventListener("click", toggleMenu);
+        // Fermer le menu au clic sur un lien
+        document.querySelectorAll("nav ul a").forEach((link) => {
+          link.addEventListener("click", () => {
+            if (navMenu.classList.contains("active")) toggleMenu();
+          });
+        });
+      });
+    </script>
   </body>
 </html>

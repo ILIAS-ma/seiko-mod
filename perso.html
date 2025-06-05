@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Seiko - Personnalisation</title>
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+  />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap"
+    rel="stylesheet"
+  />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="logo">Seicool</div>
+      <div class="burger" id="burger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#home">Accueil</a></li>
+        <li><a href="#about">À propos</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <header>
+      <div class="overlay"></div>
+    </header>
+    <main style="padding-top: 90px; min-height: 60vh">
+      <div id="mczrLoader" style="text-align: center; position: relative">
+        <iframe
+          id="mczrProductIframe"
+          style="border: none; margin-top: 100px"
+          src="https://seikomod.gokickflip.com/customize/startingpoint/66bdedeae752958b75795b52?shopid=66acdb5ef66e9dc978a7d4db&amp;lang=fr&amp;country=FR&amp;currency=EUR&amp;rate=1.0&amp;storeProductUrl=https%3A%2F%2Fseiko-mods.fr%2Fproducts%2Funtitled-product%3FdesignId%3D%3CdesignId%3E%26token%3D%3Ctoken%3E"
+          width="100%"
+          height="800px"
+          allow="clipboard-write"
+        ></iframe>
+
+        <!-- Accroche WhatsApp mobile améliorée -->
+        <div id="whatsapp-cta-block">
+          <div id="whatsapp-cta-text">
+            <span class="cta-emoji">💬</span>
+            <span class="cta-main">Intéressé(e) ?</span><br />
+            <span class="cta-desc"
+              >Discutons de votre projet sur <b>WhatsApp</b> et obtenez un
+              conseil personnalisé !</span
+            >
+          </div>
+          <button
+            id="whatsapp-redirect-btn"
+            onclick="window.open('https://wa.me/33612345678','_blank')"
+          >
+            <i class="fab fa-whatsapp"></i> <span>Discuter sur WhatsApp</span>
+          </button>
+        </div>
+
+        <style>
+          #whatsapp-cta-block {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0 auto;
+            max-width: 98vw;
+          }
+          #whatsapp-cta-text {
+            display: none;
+            text-align: center;
+            color: #222;
+            font-size: 1.08rem;
+            font-weight: 500;
+            margin: 18px auto 0 auto;
+            max-width: 95vw;
+            line-height: 1.5;
+            letter-spacing: 0.01em;
+          }
+          #whatsapp-cta-text .cta-emoji {
+            font-size: 1.5rem;
+            display: block;
+            margin-bottom: 2px;
+          }
+          #whatsapp-cta-text .cta-main {
+            font-size: 1.13rem;
+            font-weight: 700;
+            color: #1ebe5d;
+          }
+          #whatsapp-cta-text .cta-desc {
+            font-size: 1.01rem;
+            color: #222;
+            font-weight: 400;
+          }
+          #whatsapp-redirect-btn {
+            position: absolute;
+            right: 340px;
+            left: auto;
+            transform: none;
+            bottom: 20px;
+            width: 200px;
+            max-width: 90vw;
+            background: #25d366;
+            color: #fff;
+            font-size: 1.1rem;
+            font-weight: 700;
+            border: none;
+            border-radius: 12px;
+            padding: 13px 0;
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+            cursor: pointer;
+            transition: background 0.18s, transform 0.18s, box-shadow 0.18s;
+            margin-bottom: 18px;
+          }
+          #whatsapp-redirect-btn i {
+            font-size: 1.3rem;
+          }
+          #whatsapp-redirect-btn:hover {
+            background: #1ebe5d;
+            transform: translateY(-2px) scale(1.04);
+            box-shadow: 0 8px 24px rgba(37, 211, 102, 0.18);
+          }
+          @media (max-width: 600px) {
+            #whatsapp-cta-text {
+              display: block;
+              font-size: 1.01rem;
+              margin: 18px auto 0 auto;
+              color: #222;
+              font-weight: 500;
+            }
+            #whatsapp-redirect-btn {
+              position: static;
+              display: block;
+              margin: 12px auto 0 auto;
+              width: 90vw;
+              font-size: 1.05rem;
+              padding: 11px 0;
+              border-radius: 16px;
+              box-shadow: 0 4px 18px rgba(37, 211, 102, 0.18);
+              z-index: 1;
+              transition: background 0.18s, transform 0.18s, box-shadow 0.18s;
+              margin-bottom: 18px;
+            }
+            #whatsapp-redirect-btn span {
+              font-size: 1.01rem;
+            }
+          }
+        </style>
+      </div>
+    </main>
+    <footer>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>À Propos</h3>
+          <p>
+            Seiko Luxury Watches - L'excellence de l'horlogerie japonaise depuis
+            1881.
+          </p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+        <div class="footer-section">
+          <h3>Liens Rapides</h3>
+          <ul>
+            <li><a href="index.html#collection">Collection</a></li>
+            <li><a href="pero.html">Personnalisation</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#">CGV</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Contact</h3>
+          <p><i class="fas fa-envelope"></i> contact@seiko.com</p>
+          <p><i class="fas fa-phone"></i> +33 1 23 45 67 89</p>
+          <p><i class="fas fa-map-marker-alt"></i> Paris, France</p>
+        </div>
+        <div class="footer-section">
+          <h3>Newsletter</h3>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Votre email" />
+            <button type="submit">S'inscrire</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Seiko Luxury Watches. Tous droits réservés.</p>
+      </div>
+    </footer>
+    <script src="navbar.js"></script>
+    <script>
+      // Menu mobile
+      const menuToggle = document.querySelector(".menu-toggle");
+      const navMenu = document.querySelector("nav ul");
+      const overlay = document.querySelector(".overlay");
+      menuToggle.addEventListener("click", toggleMenu);
+      overlay.addEventListener("click", toggleMenu);
+      function toggleMenu() {
+        menuToggle.classList.toggle("active");
+        navMenu.classList.toggle("active");
+        overlay.classList.toggle("active");
+        document.body.style.overflow = navMenu.classList.contains("active")
+          ? "hidden"
+          : "";
+      }
+      // Fermer le menu au clic sur un lien
+      document.querySelectorAll("nav ul a").forEach((link) => {
+        link.addEventListener("click", () => {
+          if (navMenu.classList.contains("active")) toggleMenu();
+        });
+      });
+      // Navbar scroll
+      let lastScroll = 0;
+      const header = document.querySelector("header");
+      window.addEventListener("scroll", () => {
+        const currentScroll = window.pageYOffset;
+        if (currentScroll <= 0) {
+          header.classList.remove("scroll-up");
+          return;
+        }
+        if (
+          currentScroll > lastScroll &&
+          !header.classList.contains("scroll-down")
+        ) {
+          header.classList.remove("scroll-up");
+          header.classList.add("scroll-down");
+        } else if (
+          currentScroll < lastScroll &&
+          header.classList.contains("scroll-down")
+        ) {
+          header.classList.remove("scroll-down");
+          header.classList.add("scroll-up");
+        }
+        lastScroll = currentScroll;
+      });
+      // WhatsApp bouton
+      setTimeout(function () {
+        var btn = document.getElementById("whatsapp-fake-btn");
+        if (btn) btn.style.display = "block";
+      }, 3000);
+    </script>
+  </body>
+</html>

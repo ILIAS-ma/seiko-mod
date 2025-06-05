@@ -83,6 +83,7 @@ nav ul {
     gap: 2.5rem;
     margin: 0;
     padding: 0;
+    margin-left: auto;
 }
 
 nav a {
@@ -218,73 +219,51 @@ nav a:hover::after {
 
 /* Styles des boutons */
 .btn {
-    padding: 1.2rem 2.5rem;
+    padding: 1.2rem 2.8rem;
     border: 2px solid #fff;
     text-decoration: none;
     color: #fff;
-    font-weight: 500;
-    font-size: 1rem;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    font-weight: 700;
+    font-size: 1.2rem;
+    border-radius: 30px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    outline: none;
     position: relative;
     overflow: hidden;
-    z-index: 1;
-    border-radius: 50px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-}
-
-.btn::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 0;
-    height: 100%;
-    background: #fff;
-    transition: all 0.4s ease;
-    z-index: -1;
-}
-
-.btn:hover::before {
-    width: 100%;
+    background: transparent;
+    box-shadow: none;
+    transition: background 0.35s cubic-bezier(0.4,0,0.2,1), color 0.35s cubic-bezier(0.4,0,0.2,1), border 0.35s cubic-bezier(0.4,0,0.2,1), box-shadow 0.35s cubic-bezier(0.4,0,0.2,1), transform 0.25s cubic-bezier(0.4,0,0.2,1);
 }
 
 .btn.primary {
     background: #fff;
     color: #000;
-    border: none;
-    font-size: 1.2rem;
-    font-weight: 700;
-    padding: 1.2rem 2.8rem;
-    border-radius: 30px;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.18), 0 1.5px 8px rgba(247,200,115,0.10);
-    transition: background 0.3s, color 0.3s, transform 0.2s, box-shadow 0.3s;
-    margin-top: 0.5rem;
-    letter-spacing: 2px;
-    outline: none;
-    position: relative;
-    overflow: hidden;
-}
-
-.btn.primary:hover, .btn.primary:focus {
-    background: #fff;
-    color: #222;
-    transform: translateY(-3px) scale(1.04);
-    box-shadow: 0 16px 40px rgba(247,200,115,0.22), 0 2px 12px rgba(0,0,0,0.12);
-    border: 2px solid #f7c873;
+    border: 2px solid #fff;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.10);
 }
 
 .btn.secondary {
     background: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+    box-shadow: none;
 }
 
-.btn.secondary:hover {
+.btn.primary:hover, .btn.primary:focus {
+    background: #fff;
     color: #000;
+    border: 2px solid #fff;
+    transform: translateY(-3px) scale(1.04);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.18), 0 2px 12px rgba(0,0,0,0.12);
 }
 
-.btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+.btn.secondary:hover, .btn.secondary:focus {
+    background: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+    transform: translateY(-3px) scale(1.04);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.18), 0 2px 12px rgba(0,0,0,0.12);
 }
 
 /* Sections communes */
@@ -878,7 +857,6 @@ footer {
         left: 0;
         width: 100%;
         height: 100%;
-        background: rgba(0, 0, 0, 0.5);
         z-index: 999;
     }
 
@@ -959,6 +937,10 @@ footer {
     .best-sellers {
         padding: 1.5rem 1.5rem;
         margin-top: 1rem;
+    }
+
+    .hero-content {
+        margin-top:100px;
     }
 }
 
@@ -1917,5 +1899,32 @@ footer {
         margin-right: auto;
         width: fit-content;
     }
+}
+
+.best-sellers-more {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.best-sellers-more .btn {
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+    border-radius: 30px;
+    background: #000;
+    color: #fff;
+    border: none;
+    font-weight: 600;
+    transition: background 0.3s, color 0.3s, transform 0.2s;
+    text-decoration: none;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.10);
+}
+
+.best-sellers-more .btn:hover {
+    background: #fff;
+    color: #000;
+    border: 2px solid #000;
+    transform: scale(1.05);
 }
 

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin - Gestion des Montres</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      .admin-container {
+        max-width: 800px;
+        margin: 2rem auto;
+        background: #fff;
+        padding: 2rem;
+        border-radius: 8px;
+      }
+      .form-group {
+        margin-bottom: 1rem;
+      }
+      .form-group label {
+        display: block;
+        margin-bottom: 0.5rem;
+      }
+      .form-group input,
+      .form-group textarea {
+        width: 100%;
+        padding: 0.5rem;
+      }
+      .btn {
+        background: #333;
+        color: #fff;
+        border: none;
+        padding: 0.5rem 1rem;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      .btn:hover {
+        background: #444;
+      }
+      .watch-list {
+        margin-top: 2rem;
+      }
+      .watch-item {
+        border-bottom: 1px solid #eee;
+        padding: 1rem 0;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+      .watch-item img {
+        width: 80px;
+        height: 80px;
+        object-fit: cover;
+        border-radius: 4px;
+      }
+      .actions {
+        margin-left: auto;
+      }
+      .actions button {
+        margin-left: 0.5rem;
+      }
+      .login-box {
+        max-width: 400px;
+        margin: 4rem auto;
+        background: #fff;
+        padding: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+      .error {
+        color: #c00;
+        margin-top: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="loginSection" class="login-box">
+      <h2>Connexion Admin</h2>
+      <form id="loginForm">
+        <div class="form-group">
+          <label for="user">Nom d'utilisateur</label>
+          <input type="text" id="user" required />
+        </div>
+        <div class="form-group">
+          <label for="pass">Mot de passe</label>
+          <input type="password" id="pass" required />
+        </div>
+        <button type="submit" class="btn">Se connecter</button>
+        <div id="loginError" class="error"></div>
+      </form>
+    </div>
+
+    <div id="adminSection" class="admin-container" style="display: none">
+      <h2>Gestion des Montres</h2>
+      <form id="watchForm">
+        <input type="hidden" id="editIndex" value="" />
+        <div class="form-group">
+          <label for="watchName">Nom</label>
+          <input type="text" id="watchName" required />
+        </div>
+        <div class="form-group">
+          <label for="watchDescription">Description</label>
+          <textarea id="watchDescription" required></textarea>
+        </div>
+        <div class="form-group">
+          <label for="watchPrice">Prix (€)</label>
+          <input type="number" id="watchPrice" required />
+        </div>
+        <div class="form-group">
+          <label for="watchImageFile"
+            >Image (importer depuis votre ordinateur)</label
+          >
+          <input type="file" id="watchImageFile" accept="image/*" />
+        </div>
+        <div class="form-group">
+          <label for="watchImage">URL de l'image (optionnel)</label>
+          <input type="text" id="watchImage" />
+        </div>
+        <button type="submit" class="btn" id="submitBtn">
+          Ajouter la montre
+        </button>
+        <button
+          type="button"
+          class="btn"
+          id="cancelEditBtn"
+          style="display: none"
+        >
+          Annuler
+        </button>
+      </form>
+
+      <div class="watch-list" id="watchList"></div>
+    </div>
+
+    <script>
+      // Authentification simple
+      const ADMIN_USER = "admin";
+      const ADMIN_PASS = "admin";
+
+      // Vérifie si déjà connecté
+      if (localStorage.getItem("isAdmin") === "true") {
+        showAdmin();
+      }
+
+      document.getElementById("loginForm").onsubmit = function (e) {
+        e.preventDefault();
+        const user = document.getElementById("user").value;
+        const pass = document.getElementById("pass").value;
+        if (user === ADMIN_USER && pass === ADMIN_PASS) {
+          localStorage.setItem("isAdmin", "true");
+          showAdmin();
+        } else {
+          document.getElementById("loginError").textContent =
+            "Identifiants incorrects";
+        }
+      };
+
+      function showAdmin() {
+        document.getElementById("loginSection").style.display = "none";
+        document.getElementById("adminSection").style.display = "";
+        renderWatches();
+      }
+
+      function getWatches() {
+        return JSON.parse(localStorage.getItem("watches") || "[]");
+      }
+      function saveWatches(watches) {
+        localStorage.setItem("watches", JSON.stringify(watches));
+      }
+      function renderWatches() {
+        const watches = getWatches();
+        const list = document.getElementById("watchList");
+        list.innerHTML = "";
+        watches.forEach((watch, i) => {
+          const div = document.createElement("div");
+          div.className = "watch-item";
+          div.innerHTML = `
+            <img src="${watch.image}" alt="${watch.name}">
+            <div>
+              <strong>${watch.name}</strong><br>
+              <span>${watch.description}</span><br>
+              <span>${watch.price} €</span>
+            </div>
+            <div class="actions">
+              <button class="btn" onclick="editWatch(${i})">Modifier</button>
+              <button class="btn" onclick="deleteWatch(${i})">Supprimer</button>
+            </div>
+          `;
+          list.appendChild(div);
+        });
+      }
+      function resetForm() {
+        document.getElementById("watchForm").reset();
+        document.getElementById("editIndex").value = "";
+        document.getElementById("submitBtn").textContent = "Ajouter la montre";
+        document.getElementById("cancelEditBtn").style.display = "none";
+      }
+      document.getElementById("watchForm").onsubmit = function (e) {
+        e.preventDefault();
+        const watches = getWatches();
+        const name = document.getElementById("watchName").value;
+        const description = document.getElementById("watchDescription").value;
+        const price = document.getElementById("watchPrice").value;
+        const editIndex = document.getElementById("editIndex").value;
+        const fileInput = document.getElementById("watchImageFile");
+        const file = fileInput.files[0];
+        const urlInput = document.getElementById("watchImage").value;
+
+        function saveWatch(imageData) {
+          if (editIndex === "") {
+            watches.push({ name, description, price, image: imageData });
+          } else {
+            watches[editIndex] = { name, description, price, image: imageData };
+          }
+          saveWatches(watches);
+          renderWatches();
+          resetForm();
+        }
+
+        if (file) {
+          const reader = new FileReader();
+          reader.onload = function (evt) {
+            saveWatch(evt.target.result);
+          };
+          reader.readAsDataURL(file);
+        } else if (urlInput) {
+          saveWatch(urlInput);
+        } else {
+          // Si pas de nouvelle image, garder l'ancienne (en mode édition)
+          let imageData = "";
+          if (editIndex !== "") {
+            imageData = watches[editIndex].image;
+          }
+          saveWatch(imageData);
+        }
+      };
+      window.editWatch = function (i) {
+        const watches = getWatches();
+        const watch = watches[i];
+        document.getElementById("watchName").value = watch.name;
+        document.getElementById("watchDescription").value = watch.description;
+        document.getElementById("watchPrice").value = watch.price;
+        document.getElementById("watchImage").value = "";
+        document.getElementById("editIndex").value = i;
+        document.getElementById("submitBtn").textContent = "Mettre à jour";
+        document.getElementById("cancelEditBtn").style.display = "";
+      };
+      window.deleteWatch = function (i) {
+        if (confirm("Supprimer cette montre ?")) {
+          const watches = getWatches();
+          watches.splice(i, 1);
+          saveWatches(watches);
+          renderWatches();
+          resetForm();
+        }
+      };
+      document.getElementById("cancelEditBtn").onclick = resetForm;
+    </script>
+  </body>
+</html>

@@ -32,7 +32,7 @@
         </button>
         <ul>
           <li><a href="#collection">Collection</a></li>
-          <li><a href="#best-sellers">Best Sellers</a></li>
+          <li><a href="montres.html">Best Sellers</a></li>
           <li><a href="pero.html">Personnalisation</a></li>
         </ul>
         <div class="nav-icons"></div>
@@ -40,57 +40,46 @@
       <div class="overlay"></div>
     </header>
 
-    <div
-      class="section-template--24885063123269__ss_video_banner_nDEzyN-padding"
-    >
-      <div
-        class="ab-banner-template--24885063123269__ss_video_banner_nDEzyN"
-        data-interval="5000"
+    <section class="hero" id="accueil">
+      <video
+        autoplay
+        muted
+        loop
+        id="hero-video"
+        playsinline="true"
+        preload="metadata"
+        poster="https://seikomod-watch.com/cdn/shop/files/1DDDF6A3-2C84-40E7-9FB9-C2D2E3F34526.jpg?v=1743764271&width=750"
       >
-        <div
-          class="ab-banner-slide-template--24885063123269__ss_video_banner_nDEzyN as-banner-slide-has-video-template--24885063123269__ss_video_banner_nDEzyN ab-banner-slide-template--24885063123269__ss_video_banner_nDEzyN--active ab-banner-image-wrapper-playing-video-template--24885063123269__ss_video_banner_nDEzyN"
-          data-index="0"
-          data-autoplay="true"
-        >
-          <div
-            class="ab-banner-video-wrapper-template--24885063123269__ss_video_banner_nDEzyN"
-          >
-            <video
-              data-src="//seikomod-watch.com/cdn/shop/videos/c/vp/49ed37e563f94ceca14bcdc63f395048/49ed37e563f94ceca14bcdc63f395048.HD-1080p-3.3Mbps-46980711.mp4?v=0"
-              autoplay=""
-              muted=""
-              playsinline=""
-              preload="none"
-              class="lazy ab-banner-video-template--24885063123269__ss_video_banner_nDEzyN entered loaded"
-              data-ll-status="loaded"
-              src="//seikomod-watch.com/cdn/shop/videos/c/vp/49ed37e563f94ceca14bcdc63f395048/49ed37e563f94ceca14bcdc63f395048.HD-1080p-3.3Mbps-46980711.mp4?v=0"
-            ></video>
+        <source
+          src="//myseikomod.fr/cdn/shop/videos/c/vp/05ca7d9417d24b27b3ff1ff0aadb4c4d/05ca7d9417d24b27b3ff1ff0aadb4c4d.HD-1080p-2.5Mbps-33787829.mp4?v=0"
+          type="video/mp4"
+        />
+      </video>
+      <div class="hero-content">
+        <h1>Seiko Mods</h1>
+        <p class="hero-subtitle">
+          Des montres uniques, personnalisées selon vos envies
+        </p>
+        <div class="hero-buttons">
+          <a href="#collection" class="btn primary">Découvrir</a>
+          <a href="#personnalisation" class="btn secondary">Créer la vôtre</a>
+        </div>
+        <div class="hero-features">
+          <div class="feature">
+            <i class="fas fa-gem"></i>
+            <span>Pièces Originales</span>
           </div>
-
-          <div
-            class="ab-banner-image-wrapper-template--24885063123269__ss_video_banner_nDEzyN"
-          >
-           
-            
-
+          <div class="feature">
+            <i class="fas fa-tools"></i>
+            <span>Assemblé à la main</span>
           </div>
-
-          <span
-            class="ab-banner-overlay-template--24885063123269__ss_video_banner_nDEzyN"
-          ></span>
-
-          <div
-            class="ab-banner-play-button-template--24885063123269__ss_video_banner_nDEzyN"
-          >
-
-          </div>
-
-
-            </div>
+          <div class="feature">
+            <i class="fas fa-shield-alt"></i>
+            <span>Garantie 1 an</span>
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
     <!-- Chatbot -->
     <div class="chatbot-container">
@@ -123,95 +112,53 @@
       </div>
     </div>
 
-    <section class="collection" id="collection">
+    <section class="watches-showcase">
       <div class="section-header">
-        <h2>Nos Seiko Mods</h2>
-        <p class="section-subtitle">
-          Des montres uniques, créées avec passion et expertise
-        </p>
+        <h2>Nos Montres</h2>
+        <p class="section-subtitle">Découvrez notre collection exclusive</p>
       </div>
-      <div class="swiper collection-swiper">
+      <div
+        class="swiper watches-swiper"
+        style="padding-left: 8vw; padding-right: 8vw"
+      >
         <div class="swiper-wrapper">
           <div class="swiper-slide">
             <div class="watch-card">
-              <div class="watch-image">
-                <img
-                  src="image/submariner-noir.webp"
-                  alt="Seiko Mod Submariner"
-                />
-                <div class="watch-overlay">
-                  <button class="quick-view">Aperçu rapide</button>
-                </div>
-              </div>
+              <img src="image/submariner-noir.webp" alt="Submariner Noir" />
               <div class="watch-info">
-                <h3>Seiko Mod Submariner</h3>
-                <p>Style iconique, performance exceptionnelle</p>
-                <div class="watch-price">
-                  <span class="price">499 €</span>
-                  <button class="add-to-cart">
-                    <i class="fas fa-shopping-cart"></i>
-                  </button>
-                </div>
+                <h3>Submariner Noir</h3>
               </div>
             </div>
           </div>
           <div class="swiper-slide">
             <div class="watch-card">
-              <div class="watch-image">
-                <img src="image/batman-jubile.webp" alt="Seiko Mod GMT" />
-                <div class="watch-overlay">
-                  <button class="quick-view">Aperçu rapide</button>
-                </div>
-              </div>
+              <img src="image/batman-jubile.webp" alt="Batman Jubilé" />
               <div class="watch-info">
-                <h3>Seiko Mod GMT</h3>
-                <p>Voyagez avec style</p>
-                <div class="watch-price">
-                  <span class="price">599 €</span>
-                  <button class="add-to-cart">
-                    <i class="fas fa-shopping-cart"></i>
-                  </button>
-                </div>
+                <h3>Batman Jubilé</h3>
               </div>
             </div>
           </div>
           <div class="swiper-slide">
             <div class="watch-card">
-              <div class="watch-image">
-                <img src="image/nautilus.webp" alt="Seiko Mod Explorer" />
-                <div class="watch-overlay">
-                  <button class="quick-view">Aperçu rapide</button>
-                </div>
-              </div>
+              <img src="image/nautilus.webp" alt="Nautilus" />
               <div class="watch-info">
-                <h3>Seiko Mod Explorer</h3>
-                <p>Élégance intemporelle</p>
-                <div class="watch-price">
-                  <span class="price">549 €</span>
-                  <button class="add-to-cart">
-                    <i class="fas fa-shopping-cart"></i>
-                  </button>
-                </div>
+                <h3>Nautilus</h3>
               </div>
             </div>
           </div>
           <div class="swiper-slide">
             <div class="watch-card">
-              <div class="watch-image">
-                <img src="image/arabica-rose.webp" alt="Seiko Mod Daytona" />
-                <div class="watch-overlay">
-                  <button class="quick-view">Aperçu rapide</button>
-                </div>
-              </div>
+              <img src="image/nautilus-skeleton.webp" alt="Nautilus Skeleton" />
               <div class="watch-info">
-                <h3>Seiko Mod Daytona</h3>
-                <p>Performance chronographe</p>
-                <div class="watch-price">
-                  <span class="price">649 €</span>
-                  <button class="add-to-cart">
-                    <i class="fas fa-shopping-cart"></i>
-                  </button>
-                </div>
+                <h3>Nautilus Skeleton</h3>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="watch-card">
+              <img src="image/sub.png" alt="Subeiko" />
+              <div class="watch-info">
+                <h3>Subeiko</h3>
               </div>
             </div>
           </div>
@@ -222,160 +169,130 @@
       </div>
     </section>
 
-    <section class="best-sellers" id="best-sellers">
-      <div class="section-header">
-        <h2>Best-Sellers</h2>
-        <p class="section-subtitle">
-          Nos modèles les plus populaires, livrés en 24h
-        </p>
-      </div>
-      <div class="swiper best-sellers-swiper">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <div class="watch-card">
-              <div class="watch-image">
-                <img
-                  src="https://seikomod-watch.com/cdn/shop/files/1DDDF6A3-2C84-40E7-9FB9-C2D2E3F34526.jpg?v=1743764271&width=750"
-                  alt="Seiko Mod Submariner No Date"
-                />
-                <div class="watch-overlay">
-                  <button class="quick-view">Aperçu rapide</button>
-                </div>
-                <div class="delivery-badge">
-                  <i class="fas fa-truck"></i>
-                  <span>24h</span>
-                </div>
-              </div>
-              <div class="watch-info">
-                <h3>Seiko Mod Submariner No Date</h3>
-                <p>Pure élégance</p>
-                <div class="watch-price">
-                  <span class="price">449 €</span>
-                  <button class="add-to-cart">
-                    <i class="fas fa-shopping-cart"></i>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="watch-card">
-              <div class="watch-image">
-                <img
-                  src="https://seikomod-watch.com/cdn/shop/files/1DDDF6A3-2C84-40E7-9FB9-C2D2E3F34526.jpg?v=1743764271&width=750"
-                  alt="Seiko Mod Pepsi"
-                />
-                <div class="watch-overlay">
-                  <button class="quick-view">Aperçu rapide</button>
-                </div>
-                <div class="delivery-badge">
-                  <i class="fas fa-truck"></i>
-                  <span>24h</span>
-                </div>
-              </div>
-              <div class="watch-info">
-                <h3>Seiko Mod Pepsi</h3>
-                <p>Style rétro</p>
-                <div class="watch-price">
-                  <span class="price">529 €</span>
-                  <button class="add-to-cart">
-                    <i class="fas fa-shopping-cart"></i>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="watch-card">
-              <div class="watch-image">
-                <img
-                  src="https://seikomod-watch.com/cdn/shop/files/1DDDF6A3-2C84-40E7-9FB9-C2D2E3F34526.jpg?v=1743764271&width=750"
-                  alt="Seiko Mod Pepsi"
-                />
-                <div class="watch-overlay">
-                  <button class="quick-view">Aperçu rapide</button>
-                </div>
-                <div class="delivery-badge">
-                  <i class="fas fa-truck"></i>
-                  <span>24h</span>
-                </div>
-              </div>
-              <div class="watch-info">
-                <h3>Seiko Mod Pepsi</h3>
-                <p>Style rétro</p>
-                <div class="watch-price">
-                  <span class="price">529 €</span>
-                  <button class="add-to-cart">
-                    <i class="fas fa-shopping-cart"></i>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="watch-card">
-              <div class="watch-image">
-                <img
-                  src="https://seikomod-watch.com/cdn/shop/files/1DDDF6A3-2C84-40E7-9FB9-C2D2E3F34526.jpg?v=1743764271&width=750"
-                  alt="Seiko Mod Hulk"
-                />
-                <div class="watch-overlay">
-                  <button class="quick-view">Aperçu rapide</button>
-                </div>
-                <div class="delivery-badge">
-                  <i class="fas fa-truck"></i>
-                  <span>24h</span>
-                </div>
-              </div>
-              <div class="watch-info">
-                <h3>Seiko Mod Hulk</h3>
-                <p>Vert émeraude</p>
-                <div class="watch-price">
-                  <span class="price">499 €</span>
-                  <button class="add-to-cart">
-                    <i class="fas fa-shopping-cart"></i>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="watch-card">
-              <div class="watch-image">
-                <img
-                  src="https://seikomod-watch.com/cdn/shop/files/1DDDF6A3-2C84-40E7-9FB9-C2D2E3F34526.jpg?v=1743764271&width=750"
-                  alt="Seiko Mod Batman"
-                />
-                <div class="watch-overlay">
-                  <button class="quick-view">Aperçu rapide</button>
-                </div>
-                <div class="delivery-badge">
-                  <i class="fas fa-truck"></i>
-                  <span>24h</span>
-                </div>
-              </div>
-              <div class="watch-info">
-                <h3>Seiko Mod Batman</h3>
-                <p>Bleu et noir</p>
-                <div class="watch-price">
-                  <span class="price">529 €</span>
-                  <button class="add-to-cart">
-                    <i class="fas fa-shopping-cart"></i>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-pagination"></div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
-      </div>
-    </section>
+    <style>
+      .watches-showcase {
+        padding: 4rem 0;
+        background: #f8f8f8;
+      }
 
-    <div class="best-sellers-more">
-      <a href="montres.html" class="btn btn-primary">Voir plus</a>
-    </div>
+      .watches-swiper {
+        padding: 2rem 0;
+        overflow: visible;
+        width: 100%;
+        max-width: 1600px;
+        margin: 0 auto;
+        box-sizing: border-box;
+      }
+
+      .watches-swiper .swiper-slide {
+        opacity: 0.4;
+        transform: scale(0.85);
+        transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+          transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        width: 300px;
+        max-width: 80vw;
+        display: flex;
+        justify-content: center;
+        filter: blur(0.5px);
+      }
+
+      .watches-swiper .swiper-slide-active {
+        opacity: 1;
+        transform: scale(1);
+        z-index: 2;
+        filter: none;
+      }
+
+      .watches-swiper .swiper-slide-active .watch-card {
+        background: #fff;
+        transform: scale(1.04);
+      }
+
+      .watch-card {
+        background: rgba(255, 255, 255, 0.85);
+        padding: 2.5rem 1.5rem 2rem 1.5rem;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 420px;
+        transition: transform 0.3s;
+      }
+
+      .watch-card img {
+        width: 100%;
+        max-width: 260px;
+        height: auto;
+        margin-bottom: 1.5rem;
+        margin-top: 0.5rem;
+        background: none !important;
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s;
+      }
+
+      .watch-card:hover img,
+      .watches-swiper .swiper-slide-active .watch-card img {
+        transform: scale(1.12);
+      }
+
+      .watch-info h3 {
+        font-size: 1.35rem;
+        margin-bottom: 0.3rem;
+        color: #181818;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+      }
+
+      .watch-info p {
+        color: #555;
+        margin-bottom: 1.1rem;
+        font-size: 1.05rem;
+      }
+
+      .watches-swiper .swiper-button-next,
+      .watches-swiper .swiper-button-prev {
+        color: #000;
+        background: white;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .watches-swiper .swiper-button-next:after,
+      .watches-swiper .swiper-button-prev:after {
+        font-size: 1.2rem;
+      }
+
+      .watches-swiper .swiper-pagination-bullet {
+        background: #000;
+      }
+
+      @media (max-width: 900px) {
+        .watches-swiper .swiper-slide {
+          width: 120px;
+          max-width: 33vw;
+        }
+        .watches-swiper {
+          padding-left: 4vw;
+          padding-right: 4vw;
+        }
+        .watch-card {
+          min-height: 270px;
+          padding: 1.2rem 0.5rem 1.2rem 0.5rem;
+        }
+        .watch-card img {
+          max-width: 110px;
+          background: none !important;
+        }
+        .watch-info h3 {
+          font-size: 1rem;
+        }
+        .watch-info p {
+          font-size: 0.95rem;
+        }
+      }
+    </style>
 
     <section class="custom-personnalisation" id="personnalisation">
       <div class="custom-personnalisation-container">
@@ -584,5 +501,98 @@
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="script.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Initialisation du swiper des montres
+        new Swiper(".watches-swiper", {
+          effect: "coverflow",
+          grabCursor: true,
+          centeredSlides: true,
+          slidesPerView: "auto",
+          initialSlide: 2,
+          loop: true,
+          speed: 800,
+          spaceBetween: 30,
+          coverflowEffect: {
+            rotate: 0,
+            stretch: 0,
+            depth: 100,
+            modifier: 2,
+            slideShadows: false,
+          },
+          pagination: {
+            el: ".watches-swiper .swiper-pagination",
+            clickable: true,
+          },
+          navigation: {
+            nextEl: ".watches-swiper .swiper-button-next",
+            prevEl: ".watches-swiper .swiper-button-prev",
+          },
+          breakpoints: {
+            0: {
+              slidesPerView: 3,
+              spaceBetween: 10,
+            },
+            900: {
+              slidesPerView: "auto",
+              spaceBetween: 30,
+            },
+          },
+        });
+
+        // Initialisation du chatbot
+        const chatbotButton = document.getElementById("chatbotButton");
+        const chatbotWindow = document.getElementById("chatbotWindow");
+        const closeChatbot = document.getElementById("closeChatbot");
+        const sendMessage = document.getElementById("sendMessage");
+        const userInput = document.getElementById("userInput");
+        const chatbotMessages = document.getElementById("chatbotMessages");
+
+        chatbotButton.addEventListener("click", () => {
+          chatbotWindow.classList.toggle("active");
+        });
+
+        closeChatbot.addEventListener("click", () => {
+          chatbotWindow.classList.remove("active");
+        });
+
+        sendMessage.addEventListener("click", () => {
+          const message = userInput.value.trim();
+          if (message) {
+            addMessage(message, "user");
+            userInput.value = "";
+            // Simuler une réponse du bot
+            setTimeout(() => {
+              addMessage(
+                "Merci pour votre message. Notre équipe vous répondra dans les plus brefs délais.",
+                "bot"
+              );
+            }, 1000);
+          }
+        });
+
+        function addMessage(text, sender) {
+          const messageDiv = document.createElement("div");
+          messageDiv.className = `message ${sender}`;
+          messageDiv.textContent = text;
+          chatbotMessages.appendChild(messageDiv);
+          chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+        }
+
+        // Initialisation des FAQ
+        const faqQuestions = document.querySelectorAll(".faq-question");
+        faqQuestions.forEach((question) => {
+          question.addEventListener("click", () => {
+            const answer = question.nextElementSibling;
+            const toggle = question.querySelector(".faq-toggle");
+
+            answer.style.maxHeight = answer.style.maxHeight
+              ? null
+              : answer.scrollHeight + "px";
+            toggle.textContent = toggle.textContent === "+" ? "-" : "+";
+          });
+        });
+      });
+    </script>
   </body>
 </html>

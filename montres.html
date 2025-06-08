@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nos Montres - Seiko Mods</title>
+    <title>Seiko - Nos Montres</title>
     <link rel="stylesheet" href="style.css" />
     <link
       rel="stylesheet"
@@ -17,6 +17,180 @@
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap"
       rel="stylesheet"
     />
+    <style>
+      .watches-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 2rem;
+        padding: 2rem;
+        max-width: 1400px;
+        margin: 0 auto;
+      }
+
+      .watch-card {
+        background: white;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+      }
+
+      .watch-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .watch-image {
+        width: 100%;
+        height: 300px;
+        background: #f5f5f5;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .watch-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        transition: transform 0.3s ease;
+      }
+
+      .watch-card:hover .watch-image img {
+        transform: scale(1.05);
+      }
+
+      .watch-info {
+        padding: 1.5rem;
+      }
+
+      .watch-name {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        color: #333;
+      }
+
+      .watch-price {
+        font-size: 1.5rem;
+        color: #2c3e50;
+        font-weight: 700;
+        margin-bottom: 1rem;
+      }
+
+      .watch-specs {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+        font-size: 0.9rem;
+        color: #666;
+      }
+
+      .watch-spec {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .watch-spec i {
+        color: #2c3e50;
+      }
+
+      .watch-actions {
+        display: flex;
+        gap: 1rem;
+      }
+
+      .btn-details,
+      .btn-cart {
+        flex: 1;
+        padding: 0.8rem;
+        border: none;
+        border-radius: 6px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .btn-details {
+        background: #f8f9fa;
+        color: #2c3e50;
+      }
+
+      .btn-cart {
+        background: #2c3e50;
+        color: white;
+      }
+
+      .btn-details:hover {
+        background: #e9ecef;
+      }
+
+      .btn-cart:hover {
+        background: #1a252f;
+      }
+
+      .watch-badge {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        padding: 0.5rem 1rem;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        z-index: 1;
+      }
+
+      .badge-new {
+        background: #2ecc71;
+        color: white;
+      }
+
+      .badge-limited {
+        background: #e74c3c;
+        color: white;
+      }
+
+      .filters {
+        padding: 2rem;
+        background: #f8f9fa;
+        margin-bottom: 2rem;
+      }
+
+      .filters-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+
+      .filter-group {
+        flex: 1;
+        min-width: 200px;
+      }
+
+      .filter-group select {
+        width: 100%;
+        padding: 0.8rem;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        background: white;
+      }
+
+      @media (max-width: 768px) {
+        .watches-grid {
+          grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+          padding: 1rem;
+        }
+
+        .watch-image {
+          height: 250px;
+        }
+      }
+    </style>
   </head>
   <body>
     <header>
@@ -31,55 +205,203 @@
           <span></span>
         </button>
         <ul>
-          <li><a href="index.html#collection">Collection</a></li>
-          <li><a href="montres.html">Best Sellers</a></li>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="montres.html" class="active">Best Sellers</a></li>
           <li><a href="pero.html">Personnalisation</a></li>
         </ul>
       </nav>
       <div class="overlay"></div>
     </header>
-    <section class="collection" style="padding-top: 7rem">
-      <div class="section-header">
-        <h2>Nos Montres</h2>
-        <p class="section-subtitle">
-          Découvrez notre sélection de Seiko Mods uniques et personnalisées.
-        </p>
+
+    <section class="filters">
+      <div class="filters-container">
+        <div class="filter-group">
+          <select id="filterPrice">
+            <option value="">Prix</option>
+            <option value="0-500">0 - 500€</option>
+            <option value="500-1000">500€ - 1000€</option>
+            <option value="1000+">1000€ et plus</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <select id="filterStyle">
+            <option value="">Style</option>
+            <option value="sport">Sport</option>
+            <option value="classic">Classique</option>
+            <option value="diver">Plongée</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <select id="filterMovement">
+            <option value="">Mouvement</option>
+            <option value="automatic">Automatique</option>
+            <option value="quartz">Quartz</option>
+            <option value="manual">Manuel</option>
+          </select>
+        </div>
       </div>
-      <div class="watches-grid" id="watchesGrid"></div>
     </section>
+
+    <div class="watches-grid" id="watchesGrid">
+      <!-- Les montres seront générées dynamiquement ici -->
+    </div>
+
     <script>
-      function renderWatches() {
-        const watches = JSON.parse(localStorage.getItem("bestSellers") || "[]");
-        const grid = document.getElementById("watchesGrid");
-        grid.innerHTML = "";
-        if (watches.length === 0) {
-          grid.innerHTML =
-            '<p style="grid-column: 1/-1; text-align:center; color:#888;">Aucune montre trouvée.</p>';
-          return;
-        }
-        watches.forEach((montre, i) => {
-          const div = document.createElement("div");
-          div.className = "watch-card";
-          div.onclick = function () {
-            window.location.href = "montre-detail.html?id=" + i;
-          };
-          div.innerHTML = `
+      // Données pour générer des montres aléatoires
+      const watchNames = [
+        "Seiko Presage",
+        "Seiko Prospex",
+        "Seiko Astron",
+        "Seiko 5 Sports",
+        "Seiko Premier",
+        "Seiko Coutura",
+        "Seiko Velatura",
+        "Seiko Brightz",
+        "Seiko Lukia",
+        "Seiko Recraft",
+        "Seiko Spirit",
+        "Seiko Credor",
+      ];
+
+      const watchStyles = ["sport", "classic", "diver"];
+      const movements = ["automatic", "quartz", "manual"];
+      const materials = ["acier", "titane", "or", "céramique"];
+      const diameters = ["38mm", "40mm", "42mm", "44mm", "46mm"];
+      const waterResistances = ["30m", "100m", "200m", "300m", "600m"];
+      const watchImages = [
+        "image/submariner-noir.webp",
+        "image/batman-jubile.webp",
+        "image/nautilus.webp",
+        "image/nautilus-skeleton.webp",
+        "image/sub.png",
+      ];
+
+      function generateRandomWatch() {
+        const name = watchNames[Math.floor(Math.random() * watchNames.length)];
+        const style =
+          watchStyles[Math.floor(Math.random() * watchStyles.length)];
+        const movement =
+          movements[Math.floor(Math.random() * movements.length)];
+        const material =
+          materials[Math.floor(Math.random() * materials.length)];
+        const diameter =
+          diameters[Math.floor(Math.random() * diameters.length)];
+        const waterResistance =
+          waterResistances[Math.floor(Math.random() * waterResistances.length)];
+        const price = Math.floor(Math.random() * 2000) + 299;
+        const image =
+          watchImages[Math.floor(Math.random() * watchImages.length)];
+        const isNew = Math.random() > 0.7;
+        const isLimited = Math.random() > 0.8;
+
+        return {
+          name,
+          style,
+          movement,
+          material,
+          diameter,
+          waterResistance,
+          price,
+          image,
+          isNew,
+          isLimited,
+        };
+      }
+
+      function createWatchCard(watch) {
+        return `
+          <div class="watch-card" data-style="${watch.style}" data-movement="${
+          watch.movement
+        }" data-price="${watch.price}">
             <div class="watch-image">
-              <img src="${montre.image}" alt="${montre.nom}" />
+              <img src="${watch.image}" alt="${watch.name}">
+              ${
+                watch.isNew
+                  ? '<span class="watch-badge badge-new">Nouveau</span>'
+                  : ""
+              }
+              ${
+                watch.isLimited
+                  ? '<span class="watch-badge badge-limited">Édition Limitée</span>'
+                  : ""
+              }
             </div>
             <div class="watch-info">
-              <h3>${montre.nom}</h3>
-              <p>${montre.description}</p>
-              <div class="watch-price">
-                <span class="price">${montre.prix} €</span>
-                <button class="add-to-cart" onclick="event.stopPropagation();window.location.href='montre-detail.html?id=${i}'"><i class="fas fa-arrow-right"></i></button>
+              <h3 class="watch-name">${watch.name}</h3>
+              <div class="watch-price">${watch.price}€</div>
+              <div class="watch-specs">
+                <div class="watch-spec">
+                  <i class="fas fa-clock"></i>
+                  <span>${watch.movement}</span>
+                </div>
+                <div class="watch-spec">
+                  <i class="fas fa-ruler"></i>
+                  <span>${watch.diameter}</span>
+                </div>
+                <div class="watch-spec">
+                  <i class="fas fa-tint"></i>
+                  <span>${watch.waterResistance}</span>
+                </div>
+                <div class="watch-spec">
+                  <i class="fas fa-gem"></i>
+                  <span>${watch.material}</span>
+                </div>
+              </div>
+              <div class="watch-actions">
+                <button class="btn-details">Détails</button>
+                <button class="btn-cart">Ajouter</button>
               </div>
             </div>
-          `;
-          grid.appendChild(div);
-        });
+          </div>
+        `;
       }
-      document.addEventListener("DOMContentLoaded", renderWatches);
+
+      function generateWatches(count = 12) {
+        const watchesGrid = document.getElementById("watchesGrid");
+        watchesGrid.innerHTML = "";
+
+        for (let i = 0; i < count; i++) {
+          const watch = generateRandomWatch();
+          watchesGrid.innerHTML += createWatchCard(watch);
+        }
+      }
+
+      // Générer les montres au chargement
+      document.addEventListener("DOMContentLoaded", () => {
+        generateWatches();
+
+        // Gestion des filtres
+        const filters = document.querySelectorAll(".filters select");
+        filters.forEach((filter) => {
+          filter.addEventListener("change", () => {
+            const priceFilter = document.getElementById("filterPrice").value;
+            const styleFilter = document.getElementById("filterStyle").value;
+            const movementFilter =
+              document.getElementById("filterMovement").value;
+
+            const watches = document.querySelectorAll(".watch-card");
+            watches.forEach((watch) => {
+              let show = true;
+
+              if (priceFilter) {
+                const price = parseInt(watch.dataset.price);
+                if (priceFilter === "0-500" && (price < 0 || price > 500))
+                  show = false;
+                if (priceFilter === "500-1000" && (price < 500 || price > 1000))
+                  show = false;
+                if (priceFilter === "1000+" && price < 1000) show = false;
+              }
+
+              if (styleFilter && watch.dataset.style !== styleFilter)
+                show = false;
+              if (movementFilter && watch.dataset.movement !== movementFilter)
+                show = false;
+
+              watch.style.display = show ? "block" : "none";
+            });
+          });
+        });
+      });
     </script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="script.js"></script>
